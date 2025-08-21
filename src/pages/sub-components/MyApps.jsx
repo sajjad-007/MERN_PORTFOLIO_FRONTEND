@@ -7,7 +7,7 @@ const MyApps = () => {
   useEffect(() => {
     const getMyApps = async () => {
       const { data } = await axios.get(
-        'http://localhost:4000/api/v1/softApplication/get',
+        'https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/softApplication/get',
         { withCredentials: true }
       );
       setApps(data.findAllSoftAppData);

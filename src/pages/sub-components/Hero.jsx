@@ -16,7 +16,7 @@ const Hero = () => {
   useEffect(() => {
     const getUserData = async () => {
       const { data } = await axios.get(
-        'http://localhost:4000/api/v1/user/getuser/portfolio',
+        'https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/user/getuser/portfolio',
         { withCredentials: true }
       );
       setUser(data.findUser);

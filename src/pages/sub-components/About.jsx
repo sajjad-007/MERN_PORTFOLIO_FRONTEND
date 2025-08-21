@@ -1,18 +1,18 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const About = () => {
-   const [user, setUser] = useState({});
-   useEffect(() => {
-     const getUserData = async () => {
-       const { data } = await axios.get(
-         'http://localhost:4000/api/v1/user/getuser/portfolio',
-         { withCredentials: true }
-       );
-       setUser(data.findUser);
-     };
-     getUserData();
-   }, []);
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const getUserData = async () => {
+      const { data } = await axios.get(
+        'https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/user/getuser/portfolio',
+        { withCredentials: true }
+      );
+      setUser(data.findUser);
+    };
+    getUserData();
+  }, []);
   return (
     <div className="w-full flex flex-col overflow-x-hidden">
       <div className="relative">
@@ -37,33 +37,34 @@ const About = () => {
         <div className="grid md:grid-cols-2 my-8 sm:my-20 gap-14">
           <div className="flex justify-center items-center">
             <img
-              src={user?.avatar ? user?.avatar?.url : ""}
+              src={user?.avatar ? user?.avatar?.url : ''}
               alt={user && user.fullName}
               className="bg-white p-2 sm:p-4 rotate-[25deg] h-[240px] sm:h-[340px] md:h-[350px] lg:h-[450px]"
             />
           </div>
           <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
             <p>
-              My name is Sajjad, but my followers call me Sakka. I will graduate
-              in Software Engineering from NIET around 2024. I work as a web
-              developer and freelancer. My hobbies include watching movies,
-              series, playing video games, and occasionally cooking.
+              Hi, I am Sajjad Hossain. I have recently finished my Diploma in
+              Electrical Engineering, and these days I am busy building
+              different MERN stack projects. I love gaming and reading books,
+              and I am also into movies, series, cooking, and of course, video
+              games.
             </p>
             <p>
-              I have interests not only in technology but also in movies,
-              series, video games, and cooking. I excel in meeting deadlines for
-              my work.
+              I am really curious about blockchain and crypto-currency, and I
+              try to learn something new in tech every day. I like challenging
+              myself, staying consistent, and getting things done on time—its
+              something I take seriously but also enjoy.
             </p>
           </div>
         </div>
         <p className="tracking-[1px] text-xl">
-          My dedication and perseverance in timely delivery of work are integral
-          to me. I maintain the courage to face any challenges for extended
-          periods.
+          I am dedicated to delivering work on time and I persevere through
+          challenges, no matter how long they last.
         </p>
       </div>
     </div>
   );
-}
+};
 
-export default About
+export default About;

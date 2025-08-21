@@ -16,7 +16,7 @@ const Contact = () => {
     setLoading(true);
     await axios
       .post(
-        'http://localhost:4000/api/v1/message/getall',
+        'https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/message/getall',
         { senderName, subject, message },
         {
           withCredentials: true,
@@ -86,9 +86,9 @@ const Contact = () => {
                 Send Message
               </Button>
             ) : (
-              <Button size="sm" disabled >
+              <Button size="sm" disabled>
                 <Loader2Icon className="animate-spin" />
-                 Sending..
+                Sending..
               </Button>
             )}
           </div>

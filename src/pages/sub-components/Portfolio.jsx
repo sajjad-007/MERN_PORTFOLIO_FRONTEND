@@ -9,7 +9,7 @@ const Portfolio = () => {
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        'http://localhost:4000/api/v1/project/getall',
+        'https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/project/getall',
         { withCredentials: true }
       );
       setProjects(data.searchAllProject);
@@ -28,9 +28,7 @@ const Portfolio = () => {
           }}
         >
           MY
-          <span className="text-tubeLight-effect font-extrabold">
-            PROJECTS
-          </span>
+          <span className="text-tubeLight-effect font-extrabold">PROJECTS</span>
         </h1>
         <h1
           className="flex sm:hidden gap-4 items-center text-[2rem] sm:text-[2.75rem] 
@@ -56,7 +54,7 @@ const Portfolio = () => {
                 />
               </Link>
             ))
-          : projects &&   // if viewAll === false → show ONLY first 9
+          : projects && // if viewAll === false → show ONLY first 9
             projects?.slice(0, 9)?.map(item => (
               <Link to={`/project/${item?._id}`} key={item?._id}>
                 <img

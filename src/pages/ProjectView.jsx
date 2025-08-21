@@ -20,9 +20,12 @@ const ProjectView = () => {
   useEffect(() => {
     const getSingleProject = async () => {
       await axios
-        .get(`http://localhost:4000/api/v1/project/get/${id}`, {
-          withCredentials: true,
-        })
+        .get(
+          `https://mern-portfolio-backend-2-zki2.onrender.com/api/v1/project/get/${id}`,
+          {
+            withCredentials: true,
+          }
+        )
         .then(res => {
           setTitle(res?.data?.findProject?.title);
           setDescription(res?.data?.findProject?.description);
